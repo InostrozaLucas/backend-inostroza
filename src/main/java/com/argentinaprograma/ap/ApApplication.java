@@ -19,7 +19,7 @@ public class ApApplication {
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration= new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
-		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+		corsConfiguration.setAllowedOrigins(Arrays.asList("https://login-lucasinostroza.web.app/"));
 		corsConfiguration.setAllowedHeaders(Arrays.asList("X-Requested-With", "Origin", "Content-Type", "Accept",
 				"Authorization","Access-Control-Allow-Origin","Origin,Accept","Access-Control-Requested-Method","Access-Control-Requested-Headers"));
 		corsConfiguration.setExposedHeaders(Arrays.asList("Origin", "Content-Type","Accept","Authorization","Access-Control-Allow-Origin",
