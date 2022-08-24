@@ -20,8 +20,8 @@ public class UsuarioController {
         Usuario usuario=usuarioServices.buscarUsuarioPorId(id);
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
-    @PutMapping("/update")
-    ResponseEntity<Usuario> editarUsuario(Usuario usuario){
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Usuario> editarUsuario(@PathVariable("id") Long id, Usuario usuario){
         Usuario updateUsuario=usuarioServices.editarUsuario(usuario);
         return new ResponseEntity<>(updateUsuario,HttpStatus.OK);
     }
