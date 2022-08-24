@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin (origins = "https://login-lucasinostroza.web.app/")
 @RequestMapping("/habilidades")
 public class HabilidadesController {
     private final HabilidadesServices habilidadesServices;
@@ -24,8 +25,8 @@ public class HabilidadesController {
         List<Habilidades> habilidades=habilidadesServices.buscarHabilidades();
         return new ResponseEntity<>(habilidades, HttpStatus.OK);
     }
-    @PutMapping("/update/{id}")
-    public ResponseEntity<Habilidades> editarHabilidades(@PathVariable("id") Long id, @RequestBody Habilidades habilidades){
+    @PutMapping("/update/)
+    public ResponseEntity<Habilidades> editarHabilidades(@RequestBody Habilidades habilidades){
         Habilidades updateHabilidades=habilidadesServices.editarHabilidades(habilidades);
         return new ResponseEntity<>(updateHabilidades,HttpStatus.OK);
     }

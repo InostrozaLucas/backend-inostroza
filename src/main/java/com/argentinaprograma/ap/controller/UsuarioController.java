@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin (origins = "https://login-lucasinostroza.web.app/")
 @RequestMapping("/usuario")
 public class UsuarioController {
     private final UsuarioServices usuarioServices;
@@ -20,8 +21,8 @@ public class UsuarioController {
         Usuario usuario=usuarioServices.buscarUsuarioPorId(id);
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
-    @PutMapping("/update/{id}")
-    public ResponseEntity<Usuario> editarUsuario(@PathVariable("id") Long id, Usuario usuario){
+    @PutMapping("/update")
+    public ResponseEntity<Usuario> editarUsuario(Usuario usuario){
         Usuario updateUsuario=usuarioServices.editarUsuario(usuario);
         return new ResponseEntity<>(updateUsuario,HttpStatus.OK);
     }
