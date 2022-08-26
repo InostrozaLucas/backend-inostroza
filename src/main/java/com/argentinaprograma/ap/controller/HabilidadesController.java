@@ -24,7 +24,7 @@ public class HabilidadesController {
         List<Habilidades> habilidades=habilidadesServices.buscarHabilidades();
         return new ResponseEntity<>(habilidades, HttpStatus.OK);
     }
-    @PutMapping("/update/)
+    @PutMapping("/update")
     public ResponseEntity<Habilidades> editarHabilidades(@RequestBody Habilidades habilidades){
         Habilidades updateHabilidades=habilidadesServices.editarHabilidades(habilidades);
         return new ResponseEntity<>(updateHabilidades,HttpStatus.OK);
