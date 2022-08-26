@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin (origins = "https://login-lucasinostroza.web.app/")
 @RequestMapping("/experiencia")
 public class ExperienciaController {
     private final ExperienciaServices experienciaServices;
